@@ -6,15 +6,15 @@ public class Pessoa {
 
 	private int id_pessoa;
 	private String nome;
-	private String email;
 	private Date dt_nascimento;
 	private String foto_perfil;
+	private String cpf;
+	private String rg;
 	
-	public Pessoa(int id_pessoa, String nome, String email, Date dt_nascimento, String foto_perfil) {
+	public Pessoa(int id_pessoa, String nome, Date dt_nascimento, String foto_perfil) {
 		super();
 		this.id_pessoa = id_pessoa;
 		this.nome = nome;
-		this.email = email;
 		this.dt_nascimento = dt_nascimento;
 		this.foto_perfil = foto_perfil;
 	}
@@ -25,12 +25,7 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	public Date getDt_nascimento() {
 		return dt_nascimento;
 	}
@@ -47,6 +42,21 @@ public class Pessoa {
 		return id_pessoa;
 	}
 	
+	public String getCpf() {
+		return cpf;
+	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getRg() {
+		return rg;
+	}
+	
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
 	
 	
 }

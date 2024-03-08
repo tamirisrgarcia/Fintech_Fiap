@@ -6,9 +6,18 @@ public class Funcionario extends Pessoa {
 
 	private int nr_registro;
 	private String cargo;
+	private String email_corp;
 	
-	public Funcionario(int id_pessoa, String nome, String email, Date dt_nascimento, String foto_perfil) {
-		super(id_pessoa, nome, email, dt_nascimento, foto_perfil);
+	public Funcionario(int id_pessoa, String nome, String email_corp, Date dt_nascimento, String foto_perfil) {
+		super(id_pessoa, nome, dt_nascimento, foto_perfil);
+	}
+
+	public String getEmail_corp() {
+		return email_corp;
+	}
+
+	public void setEmail_corp(String email_corp) {
+		this.email_corp = email_corp;
 	}
 
 	public int getNr_registro() {

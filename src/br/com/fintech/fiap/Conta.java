@@ -1,4 +1,5 @@
 package br.com.fintech.fiap;
+import java.util.Scanner;
 
 public class Conta {
 	public int id_conta;
@@ -48,30 +49,51 @@ public class Conta {
 		return saldo;
 	}
 	
-	public void consultarSaldo(int nr_conta) {
-		
+	public void consultarSaldo() {
+		 System.out.println("Seu saldo é: " + this.saldo);
 	}
 	
-	private void depositar(double valor) {
+	private double depositar(double valor) {
 		this.saldo = this.getSaldo() + valor;
-		
+		return this.saldo;
 	}
 	
-	private void sacar(double valor) {
+	private double sacar(double valor) {
 		this.saldo = this.getSaldo() - valor;
-		
+		return this.saldo;
 	}
 	
-	public void incluirConta() {
-		
+	public void incluirConta(int id_conta, int nr_conta, int agencia, double saldo, String tipo) {
+		Conta conta = new Conta(id_conta, nr_conta, agencia, saldo, tipo);
+		System.out.println("Sua conta foi criada com sucesso!\n Sua agencia é: " + agencia + "\nSeu número da conta é: " + nr_conta + "\nSeu tipo de conta é: " + tipo);
 	}
 	
-	private void editarConta(int id_conta) {
+	public void editarConta() { 
+		System.out.print("1 - Editar número da conta:\n2 - Editar número da agência:\n3 - Editar tipo da conta: ");
+		Scanner sc = new Scanner(System.in);
+		int resposta = sc.nextInt();
+		
+		if(resposta == 1) {
+			System.out.println("Digite o novo número da conta: ");
+			int novoNumero = sc.nextInt();
+			System.out.println("Seu novo número da conta é: " + novoNumero);
+		} else if(resposta == 2 ) {
+			System.out.println("Digite o novo número da agência: ");
+			int novaAgencia = sc.nextInt();
+			System.out.println("Sua nova agencia é: " + novaAgencia);
+		} else if(resposta == 3) {
+			System.out.println("Digite o novo tipo da conta: ");
+			String novoTipoConta = sc.next();
+			System.out.println("Seu novo tipo de conta é: " + novoTipoConta);
+		} else {
+			System.out.println("Opção inválida");
+		}
 		
 	}
 	
 	private void excluirConta(int id_conta) {
 		
+		System.out.println("Sua conta foi excluída com sucesso");
 	}
 	
 	

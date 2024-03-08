@@ -1,6 +1,7 @@
 package br.com.fintech.fiap;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Gastos {
 	
@@ -59,16 +60,39 @@ public class Gastos {
 		return this.getValor();
 	}
 	
-	private void incluirGasto() {
-		
+	private void incluirGasto(int id_gasto, String dsc_gastos, double valor, Date dt_gasto, boolean gasto_fixo) {
+		Gastos gasto = new Gastos(id_gasto, dsc_gastos, valor, dt_gasto, gasto_fixo);
+		System.out.println("Gasto incluído com sucesso");
 	}
 	
-	private void editarGasto(int id_gasto) {
+	private void editarGasto() {
+		System.out.print("1 - Editar descrição do gasto:\n2 - Editar valor:\n3 - Editar data do gasto:\n4 - É um gasto fixo?: ");
+		Scanner sc = new Scanner(System.in);
+		int resposta = sc.nextInt();
 		
+		if(resposta == 1) {
+			System.out.println("Digite a nova descrição do gasto: ");
+			int novoGasto = sc.nextInt();
+			System.out.println("Seu novo gasto é: " + novoGasto);
+		} else if(resposta == 2 ) {
+			System.out.println("Digite valor: ");
+			int novoValor = sc.nextInt();
+			System.out.println("Seu novo valor é: " + novoValor);
+		} else if(resposta == 3) {
+			System.out.println("Digite a nova data do gasto: ");
+			String novaDtGasto = sc.next();
+			System.out.println("Sua nova data é: " + novaDtGasto);
+		} else if(resposta == 4) {
+			System.out.println("Digite a recorrência do gasto (Fixo ou Variável): ");
+			String novaReco = sc.next();
+			System.out.println("Sua recorrência é: " + novaReco);
+		} else {
+			System.out.println("Opção inválida");
+		}
 	}
 	
 	private void excluirGasto(int id_gasto) {
-		
+		System.out.println("Gasto excluído com sucesso");
 	}
 	
 }
