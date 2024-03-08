@@ -7,6 +7,8 @@ public class Conta {
 	private int agencia;
 	private double saldo;
 	private String tipo;
+
+	static Conta conta;
 	
 	public Conta(int id_conta, int nr_conta, int agencia, double saldo, String tipo) {
 		super();
@@ -63,9 +65,9 @@ public class Conta {
 		return this.saldo;
 	}
 	
-	public void incluirConta(int id_conta, int nr_conta, int agencia, double saldo, String tipo) {
-		Conta conta = new Conta(id_conta, nr_conta, agencia, saldo, tipo);
-		System.out.println("Sua conta foi criada com sucesso!\n Sua agencia é: " + agencia + "\nSeu número da conta é: " + nr_conta + "\nSeu tipo de conta é: " + tipo);
+	public static void incluirConta(int id_conta, int nr_conta, int agencia, double saldo, String tipo) {
+		conta = new Conta(id_conta, nr_conta, agencia, saldo, tipo);
+		System.out.println("Sua conta foi criada com sucesso!\nSua agencia é: " + agencia + "\nSeu número da conta é: " + nr_conta + "\nSeu tipo de conta é: " + tipo);
 	}
 	
 	public void editarConta() { 
@@ -91,8 +93,8 @@ public class Conta {
 		
 	}
 	
-	private void excluirConta(int id_conta) {
-		
+	public static void excluirConta() {
+		conta = null ;
 		System.out.println("Sua conta foi excluída com sucesso");
 	}
 	

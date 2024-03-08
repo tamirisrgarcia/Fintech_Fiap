@@ -4,12 +4,11 @@ import java.util.Date;
 
 public class Main {
 	public static void main(String[] args) {
-		//Usuario user = new Usuario(123, "Teste", "email@email.com", new Date(1995-12-24), "foto.png");
-		Conta conta = new Conta(123, 321, 456, 58.8, "Poupança");
 		
-		//conta.editarConta();
 		
-		conta.incluirConta(123, 321, 456, 789.2, "oi");
-		
+		Conta.incluirConta(768, 1, 2, 3, "oi");
+		System.out.println("ID da conta: " + Conta.conta.getAgencia());
+		Conta.excluirConta();
+		System.out.println("ID da conta: " + Conta.conta.getAgencia());
 	}
 }
