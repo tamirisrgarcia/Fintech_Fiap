@@ -8,8 +8,9 @@ public class Usuario extends Pessoa {
 	
 	private String email;
 	private int senha;
+	static Usuario usuario;
 
-	public Usuario(int id_pessoa, String nome, Date dt_nascimento, String foto_perfil, String email, int senha) {
+	public Usuario(int id_pessoa, String nome, String dt_nascimento, String foto_perfil, String email, int senha) {
 		super(id_pessoa, nome, dt_nascimento, foto_perfil);
 		this.email = email;
 		this.senha = senha;
@@ -31,8 +32,8 @@ public class Usuario extends Pessoa {
 	}
 
 	
-	private void incluirUsuario(int id_pessoa, String nome, Date dt_nascimento, String foto_perfil, String email, int senha) {
-		Usuario usuario = new Usuario(id_pessoa, nome, dt_nascimento, foto_perfil, email, senha);
+	public static void incluirUsuario(int id_pessoa, String nome, String dt_nascimento, String foto_perfil, String email, int senha) {
+		usuario = new Usuario(id_pessoa, nome, dt_nascimento, foto_perfil, email, senha);
 		System.out.println("Usuário incluído com sucesso!");
 	}
 	
@@ -40,27 +41,21 @@ public class Usuario extends Pessoa {
 		System.out.println("Nome: " + nome + "Data de Nascimento" + dt_nascimento + "Email: " + email);
 	}
 	
-	private void editarUsuario() {
-		System.out.print("1 - Editar nome do usuário:\n2 - Editar email do usuário:\n3 - Editar data de nascimento do usuário:\n4 - Editar senha: ");
+	public void editarUsuario() {
+		System.out.print("1 - Editar email do usuário:\n 2- Editar senha: ");
 		Scanner sc = new Scanner(System.in);
 		int resposta = sc.nextInt();
 		
 		if(resposta == 1) {
-			System.out.println("Digite o novo nome do usuário: ");
-			int novoNome = sc.nextInt();
-			System.out.println("Seu novo nome do usuário é: " + novoNome);
-		} else if(resposta == 2 ) {
-			System.out.println("Digite o novo email do usuário: ");
-			int novoEmail = sc.nextInt();
+			System.out.println("Digite o novo nome email: ");
+			String novoEmail = sc.next();
+			email = novoEmail;
 			System.out.println("Seu novo email é: " + novoEmail);
-		} else if(resposta == 3) {
-			System.out.println("Digite a nova data de nascimento: ");
-			String novaDtNasc = sc.next();
-			System.out.println("Sua nova data de nascimento é: " + novaDtNasc);
-		} else if(resposta == 4) {
+		} else if(resposta == 2 ) {
 			System.out.println("Digite a nova senha: ");
-			String novaSenha = sc.next();
-			System.out.println("Sua nova senha: " + novaSenha);
+			int novaSenha = sc.nextInt();
+			senha = novaSenha;
+			System.out.println("Sua nova senha é: " + novaSenha);
 		} else {
 			System.out.println("Opção inválida");
 		}
@@ -74,7 +69,8 @@ public class Usuario extends Pessoa {
 		System.out.println("Usuário desbloqueado com sucesso");
 	}
 	
-	public void excluirUsuario(int id_usuario) {
+	public static void excluirUsuario() {
+		usuario = null;
 		System.out.println("Usuário excluído com sucesso");
 	}
 	

@@ -8,10 +8,11 @@ public class Renda {
 	private int id_renda;
 	private String dsc_renda;
 	private double valor;
-	private Date dt_recebimento;
+	private String dt_recebimento;
 	private String frequencia;
+	static Renda renda;
 	
-	public Renda(int id_renda, String dsc_renda, double valor, Date dt_recebimento, String frequencia) {
+	public Renda(int id_renda, String dsc_renda, double valor, String dt_recebimento, String frequencia) {
 		super();
 		this.id_renda = id_renda;
 		this.dsc_renda = dsc_renda;
@@ -36,11 +37,11 @@ public class Renda {
 		this.valor = valor;
 	}
 
-	public Date getDt_recebimento() {
+	public String getDt_recebimento() {
 		return dt_recebimento;
 	}
 
-	public void setDt_recebimento(Date dt_recebimento) {
+	public void setDt_recebimento(String dt_recebimento) {
 		this.dt_recebimento = dt_recebimento;
 	}
 
@@ -57,41 +58,46 @@ public class Renda {
 	}
 	
 	public void consultarRenda(int id_renda) {
-		
+		System.out.println("Renda: " + dsc_renda + " | com valor de: " + valor + " | Recebido na data: " + dt_recebimento);
 	}
 	
-	private void incluirRenda(int id_renda, String dsc_renda, double valor, Date dt_recebimento, String frequencia) {
-		Renda renda = new Renda(id_renda, dsc_renda, valor, dt_recebimento, frequencia);
+	public static void incluirRenda(int id_renda, String dsc_renda, double valor, String dt_recebimento, String frequencia) {
+		renda = new Renda(id_renda, dsc_renda, valor, dt_recebimento, frequencia);
 		System.out.println("Renda incluída com sucesso");
 	}
 	
-	private void editarRenda() {
+	public void editarRenda() {
 		System.out.print("1 - Editar descrição da renda:\n2 - Editar valor:\n3 - Editar data de recebimento:\n4 - É uma renda fixa?: ");
 		Scanner sc = new Scanner(System.in);
 		int resposta = sc.nextInt();
 		
 		if(resposta == 1) {
 			System.out.println("Digite a nova descrição da renda: ");
-			int novaRenda = sc.nextInt();
+			String novaRenda = sc.next();
+			dsc_renda = novaRenda;
 			System.out.println("Sua nova renda é: " + novaRenda);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite valor: ");
-			int novoValor = sc.nextInt();
+			Double novoValor = sc.nextDouble();
+			valor = novoValor;
 			System.out.println("Seu novo valor é: " + novoValor);
 		} else if(resposta == 3) {
 			System.out.println("Digite a nova data de recebimento: ");
 			String novaDtReceb = sc.next();
+			dt_recebimento = novaDtReceb;
 			System.out.println("Sua nova data é: " + novaDtReceb);
 		} else if(resposta == 4) {
 			System.out.println("Digite a recorrência da renda (Fixa ou Variável): ");
 			String novaReco = sc.next();
+			frequencia = novaReco;
 			System.out.println("Sua recorrência é: " + novaReco);
 		} else {
 			System.out.println("Opção inválida");
 		}
 	}
 	
-	private void excluirRenda(int id_renda) {
+	public static void excluirRenda() {
+		renda = null;
 		System.out.println("Renda excluída com sucesso");
 	}
 	

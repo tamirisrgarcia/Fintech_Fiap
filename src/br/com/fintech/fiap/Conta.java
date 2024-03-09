@@ -78,14 +78,17 @@ public class Conta {
 		if(resposta == 1) {
 			System.out.println("Digite o novo número da conta: ");
 			int novoNumero = sc.nextInt();
+			nr_conta = novoNumero;
 			System.out.println("Seu novo número da conta é: " + novoNumero);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite o novo número da agência: ");
 			int novaAgencia = sc.nextInt();
+			agencia = novaAgencia;
 			System.out.println("Sua nova agencia é: " + novaAgencia);
 		} else if(resposta == 3) {
 			System.out.println("Digite o novo tipo da conta: ");
 			String novoTipoConta = sc.next();
+			tipo = novoTipoConta;
 			System.out.println("Seu novo tipo de conta é: " + novoTipoConta);
 		} else {
 			System.out.println("Opção inválida");
