@@ -8,10 +8,11 @@ public class Gastos {
 	private int id_gasto;
 	private String dsc_gastos;
 	private double valor;
-	private Date dt_gasto;
+	private String dt_gasto;
 	private boolean gasto_fixo;
+	static Gastos gasto;
 	
-	public Gastos(int id_gasto, String dsc_gastos, double valor, Date dt_gasto, boolean gasto_fixo) {
+	public Gastos(int id_gasto, String dsc_gastos, double valor, String dt_gasto, boolean gasto_fixo) {
 		super();
 		this.id_gasto = id_gasto;
 		this.dsc_gastos = dsc_gastos;
@@ -36,11 +37,11 @@ public class Gastos {
 		this.valor = valor;
 	}
 
-	public Date getDt_gasto() {
+	public String getDt_gasto() {
 		return dt_gasto;
 	}
 
-	public void setDt_gasto(Date dt_gasto) {
+	public void setDt_gasto(String dt_gasto) {
 		this.dt_gasto = dt_gasto;
 	}
 
@@ -60,38 +61,43 @@ public class Gastos {
 		return this.getValor();
 	}
 	
-	private void incluirGasto(int id_gasto, String dsc_gastos, double valor, Date dt_gasto, boolean gasto_fixo) {
-		Gastos gasto = new Gastos(id_gasto, dsc_gastos, valor, dt_gasto, gasto_fixo);
+	public static void incluirGasto(int id_gasto, String dsc_gastos, double valor, String dt_gasto, boolean gasto_fixo) {
+		gasto = new Gastos(id_gasto, dsc_gastos, valor, dt_gasto, gasto_fixo);
 		System.out.println("Gasto incluído com sucesso");
 	}
 	
-	private void editarGasto() {
+	public void editarGasto() {
 		System.out.print("1 - Editar descrição do gasto:\n2 - Editar valor:\n3 - Editar data do gasto:\n4 - É um gasto fixo?: ");
 		Scanner sc = new Scanner(System.in);
 		int resposta = sc.nextInt();
 		
 		if(resposta == 1) {
 			System.out.println("Digite a nova descrição do gasto: ");
-			int novoGasto = sc.nextInt();
+			String novoGasto = sc.next();
+			dsc_gastos = novoGasto;
 			System.out.println("Seu novo gasto é: " + novoGasto);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite valor: ");
 			int novoValor = sc.nextInt();
+			valor = novoValor;
 			System.out.println("Seu novo valor é: " + novoValor);
 		} else if(resposta == 3) {
 			System.out.println("Digite a nova data do gasto: ");
 			String novaDtGasto = sc.next();
+			dt_gasto = novaDtGasto;
 			System.out.println("Sua nova data é: " + novaDtGasto);
 		} else if(resposta == 4) {
 			System.out.println("Digite a recorrência do gasto (Fixo ou Variável): ");
-			String novaReco = sc.next();
+			Boolean novaReco = sc.nextBoolean();
+			gasto_fixo = novaReco;
 			System.out.println("Sua recorrência é: " + novaReco);
 		} else {
 			System.out.println("Opção inválida");
 		}
 	}
 	
-	private void excluirGasto(int id_gasto) {
+	public static void excluirGasto() {
+		gasto = null;
 		System.out.println("Gasto excluído com sucesso");
 	}
 	
