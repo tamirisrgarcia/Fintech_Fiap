@@ -75,22 +75,22 @@ public class Renda {
 			System.out.println("Digite a nova descrição da renda: ");
 			String novaRenda = sc.next();
 			dsc_renda = novaRenda;
-			System.out.println("Sua nova renda é: " + novaRenda);
+			System.out.println("Sua nova renda é: " +dsc_renda);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite valor: ");
 			Double novoValor = sc.nextDouble();
 			valor = novoValor;
-			System.out.println("Seu novo valor é: " + novoValor);
+			System.out.println("Seu novo valor é: " + valor);
 		} else if(resposta == 3) {
 			System.out.println("Digite a nova data de recebimento: ");
 			String novaDtReceb = sc.next();
 			dt_recebimento = novaDtReceb;
-			System.out.println("Sua nova data é: " + novaDtReceb);
+			System.out.println("Sua nova data é: " + dt_recebimento);
 		} else if(resposta == 4) {
 			System.out.println("Digite a recorrência da renda (Fixa ou Variável): ");
 			String novaReco = sc.next();
 			frequencia = novaReco;
-			System.out.println("Sua recorrência é: " + novaReco);
+			System.out.println("Sua recorrência é: " + frequencia);
 		} else {
 			System.out.println("Opção inválida");
 		}

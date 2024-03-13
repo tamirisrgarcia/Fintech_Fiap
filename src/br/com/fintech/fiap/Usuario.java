@@ -10,8 +10,8 @@ public class Usuario extends Pessoa {
 	private int senha;
 	static Usuario usuario;
 
-	public Usuario(int id_pessoa, String nome, String dt_nascimento, String foto_perfil, String email, int senha) {
-		super(id_pessoa, nome, dt_nascimento, foto_perfil);
+	public Usuario(int id_pessoa, String nome, String dt_nascimento, double cpf, double rg ,String foto_perfil, String email, int senha) {
+		super(id_pessoa, nome, cpf, rg, dt_nascimento, foto_perfil);
 		this.email = email;
 		this.senha = senha;
 	}
@@ -32,8 +32,8 @@ public class Usuario extends Pessoa {
 	}
 
 	
-	public static void incluirUsuario(int id_pessoa, String nome, String dt_nascimento, String foto_perfil, String email, int senha) {
-		usuario = new Usuario(id_pessoa, nome, dt_nascimento, foto_perfil, email, senha);
+	public static void incluirUsuario(int id_pessoa, String nome, String dt_nascimento, double cpf, double rg , String foto_perfil, String email, int senha) {
+		usuario = new Usuario(id_pessoa, nome, dt_nascimento, cpf, rg, foto_perfil, email, senha);
 		System.out.println("Usuário incluído com sucesso!");
 	}
 	
@@ -50,12 +50,12 @@ public class Usuario extends Pessoa {
 			System.out.println("Digite o novo nome email: ");
 			String novoEmail = sc.next();
 			email = novoEmail;
-			System.out.println("Seu novo email é: " + novoEmail);
+			System.out.println("Seu novo email é: " + email);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite a nova senha: ");
 			int novaSenha = sc.nextInt();
 			senha = novaSenha;
-			System.out.println("Sua nova senha é: " + novaSenha);
+			System.out.println("Sua nova senha é: " + senha);
 		} else {
 			System.out.println("Opção inválida");
 		}

@@ -131,19 +131,19 @@ public class Cartao {
 			System.out.println("Digite a nova bandeira: ");
 			String novaBandeira = sc.next();
 			bandeira = novaBandeira;
-			System.out.println("Sua nova bandeira é: " + novaBandeira);
+			System.out.println("Sua nova bandeira é: " + bandeira);
 		}
 		else if(resposta == 6) {
 			System.out.println("Digite o novo número de segurança: ");
 			int novoNrSeguranca = sc.nextInt();
 			nr_seguranca = novoNrSeguranca;
-			System.out.println("Seu novo tipo de conta é: " + novoNrSeguranca);
+			System.out.println("Seu novo tipo de conta é: " + nr_seguranca);
 		}
 		else if(resposta == 7) {
 			System.out.println("Digite o novo tipo do cartão: ");
 			String novoTipo = sc.next();
 			tipo = novoTipo;
-			System.out.println("Seu novo tipo de cartão é: " + novoTipo);
+			System.out.println("Seu novo tipo de cartão é: " + tipo);
 		}
 		else {
 			System.out.println("Opção inválida");

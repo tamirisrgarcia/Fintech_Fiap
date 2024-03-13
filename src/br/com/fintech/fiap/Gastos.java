@@ -75,22 +75,22 @@ public class Gastos {
 			System.out.println("Digite a nova descrição do gasto: ");
 			String novoGasto = sc.next();
 			dsc_gastos = novoGasto;
-			System.out.println("Seu novo gasto é: " + novoGasto);
+			System.out.println("Seu novo gasto é: " + dsc_gastos);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite valor: ");
 			int novoValor = sc.nextInt();
 			valor = novoValor;
-			System.out.println("Seu novo valor é: " + novoValor);
+			System.out.println("Seu novo valor é: " + valor);
 		} else if(resposta == 3) {
 			System.out.println("Digite a nova data do gasto: ");
 			String novaDtGasto = sc.next();
 			dt_gasto = novaDtGasto;
-			System.out.println("Sua nova data é: " + novaDtGasto);
+			System.out.println("Sua nova data é: " + dt_gasto);
 		} else if(resposta == 4) {
 			System.out.println("Digite a recorrência do gasto (Fixo ou Variável): ");
 			Boolean novaReco = sc.nextBoolean();
 			gasto_fixo = novaReco;
-			System.out.println("Sua recorrência é: " + novaReco);
+			System.out.println("Sua recorrência é: " + gasto_fixo);
 		} else {
 			System.out.println("Opção inválida");
 		}
