@@ -10,8 +10,8 @@ public class Funcionario extends Pessoa {
 	private String email_corp;
 	static Funcionario funcionario;
 
-	public Funcionario(int id_pessoa, String nome, String email_corp, String dt_nascimento, String foto_perfil) {
-		super(id_pessoa, nome, dt_nascimento, foto_perfil);
+	public Funcionario(int id_pessoa, String nome, String email_corp, double cpf, double rg , String dt_nascimento, String foto_perfil) {
+		super(id_pessoa, nome, cpf, rg, dt_nascimento, foto_perfil);
 	}
 
 	public String getEmail_corp() {
@@ -42,8 +42,8 @@ public class Funcionario extends Pessoa {
 		System.out.println("Nome:"  + nome + "| Data de Nascimento" + dt_nascimento + "| Email: " + email_corp + "| Regsitro: " + nr_registro );
 	}
 	
-	public static void incluirFuncionario(int nr_registro, String cargo, String email_corp,String dt_nascimento ) {
-		funcionario = new Funcionario(nr_registro, cargo, email_corp, dt_nascimento, email_corp);
+	public static void incluirFuncionario(int nr_registro, String cargo, String email_corp, double cpf, double rg ,String dt_nascimento ) {
+		funcionario = new Funcionario(nr_registro, cargo, email_corp, cpf, rg ,dt_nascimento, email_corp);
 		System.out.println("Usuario incluido com sucesso!");
 	}
 	
@@ -56,17 +56,17 @@ public class Funcionario extends Pessoa {
 			System.out.println("Digite o novo cargo: ");
 			String novoCargo = sc.next();
 			cargo = novoCargo;
-			System.out.println("Seu novo cargo é: " + novoCargo);
+			System.out.println("Seu novo cargo é: " + cargo);
 		} else if(resposta == 2 ) {
 			System.out.println("Digite o novo email corporativo: ");
 			String novoEmail = sc.next();
 			email_corp = novoEmail;
-			System.out.println("Seu novo email é: " + novoEmail);
+			System.out.println("Seu novo email é: " + email_corp);
 		} else if(resposta == 3) {
 			System.out.println("Digite o novo numero de registro: ");
 			int novoRegistro = sc.nextInt();
 			nr_registro = novoRegistro;
-			System.out.println("Seu novo numero de registro é: " + novoRegistro);
+			System.out.println("Seu novo numero de registro é: " + nr_registro);
 		}  else {
 			System.out.println("Opção inválida");
 		}
