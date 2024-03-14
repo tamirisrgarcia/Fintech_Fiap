@@ -115,7 +115,6 @@ public class Endereco {
 			nr_casa = novoNr;
 			System.out.println("Seu novo número é: " + nr_casa);
 		}
-	
 		else {
 			System.out.println("Opção inválida");
 		}

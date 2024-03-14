@@ -1,6 +1,5 @@
 package br.com.fintech.fiap;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Funcionario extends Pessoa {
@@ -38,7 +37,7 @@ public class Funcionario extends Pessoa {
 		this.cargo = cargo;
 	}
 	
-	public void consultarFuncionario(int nr_registro, String nome, String email_corp, Date dt_nascimento) {
+	public void consultarFuncionario() {
 		System.out.println("Nome:"  + nome + "| Data de Nascimento" + dt_nascimento + "| Email: " + email_corp + "| Regsitro: " + nr_registro );
 	}
 	

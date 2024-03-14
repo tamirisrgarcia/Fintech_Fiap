@@ -1,19 +1,18 @@
 package br.com.fintech.fiap;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Pessoa {
 
 	private int id_pessoa;
-	private String nome;
-	private String dt_nascimento;
+	protected String nome;
+	protected String dt_nascimento;
 	private String foto_perfil;
 	private Double cpf;
 	private Double rg;
 	static Pessoa pessoa;
 	
-	public Pessoa(int id_pessoa, String nome, double cpf2, double rg2, String dt_nascimento, String foto_perfil) {
+	public Pessoa(int id_pessoa, String nome, double cpf, double rg, String dt_nascimento, String foto_perfil) {
 		super();
 		this.id_pessoa = id_pessoa;
 		this.nome = nome;
