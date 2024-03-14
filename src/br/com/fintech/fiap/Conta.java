@@ -55,12 +55,12 @@ public class Conta {
 		 System.out.println("Seu saldo é: " + this.saldo);
 	}
 	
-	private double depositar(double valor) {
+	public double depositar(double valor) {
 		this.saldo = this.getSaldo() + valor;
 		return this.saldo;
 	}
 	
-	private double sacar(double valor) {
+	public double sacar(double valor) {
 		this.saldo = this.getSaldo() - valor;
 		return this.saldo;
 	}
@@ -100,6 +100,4 @@ public class Conta {
 		conta = null ;
 		System.out.println("Sua conta foi excluída com sucesso");
 	}
-	
-	
 }

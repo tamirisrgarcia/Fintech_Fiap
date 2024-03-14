@@ -1,6 +1,5 @@
 package br.com.fintech.fiap;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Cartao {
@@ -13,6 +12,8 @@ public class Cartao {
 	private String bandeira;
 	private int nr_seguranca;
 	private String tipo;
+	private Boolean bloqueado;
+
 	static Cartao cartao;
 	
 	public Cartao(int id_cartao, int nr_cartao, String validade, double limite, String titular, String bandeira, int nr_seguranca, String tipo) {
@@ -25,6 +26,14 @@ public class Cartao {
 		this.bandeira = bandeira;
 		this.nr_seguranca = nr_seguranca;
 		this.tipo = tipo;
+	}
+
+	public Boolean getBloqueado(){
+		return bloqueado;
+	}
+
+	public void setBloqueado(Boolean bloqueado){
+		this.bloqueado = bloqueado;
 	}
 
 	public String getValidade() {
@@ -95,11 +104,11 @@ public class Cartao {
 	}
 	
 	public void consultarCartao() {
-		System.out.println("Numero do cartão: " + nr_cartao + " \nValidade: " + validade + "\nLimite: " + limite + "\nTitular: " + titular + "\nBandeira: " + bandeira + "\nNumero de segurança: " + nr_seguranca + "\nTipo: " + tipo);
+		System.out.println("Numero do cartão: " + nr_cartao + " \nValidade: " + validade + "\nLimite: " + limite + "\nTitular: " + titular + "\nBandeira: " + bandeira + "\nNumero de segurança: " + nr_seguranca + "\nTipo: " + tipo + "\nBloqueado: ");
 	}
 	
 	public void editarCartao() {
-		System.out.print("1 - Editar número do cartão:\n2 - Editar validade:\n3 - Editar titular:\n4 - Editar Limite:\n5 - Editar Bandeira;\n6 - Editar número de segurança:\n7 - Editar tipo:");
+		System.out.print("1 - Editar número do cartão:\n2 - Editar validade:\n3 - Editar titular:\n4 - Editar Limite:\n5 - Editar Bandeira;\n6 - Editar número de segurança:\n7 - Editar tipo: \n8 - Bloquear cartão: \n9 - Desbloquear cartão: ");
 		Scanner sc = new Scanner(System.in);
 		int resposta = sc.nextInt();
 		
@@ -145,18 +154,26 @@ public class Cartao {
 			tipo = novoTipo;
 			System.out.println("Seu novo tipo de cartão é: " + tipo);
 		}
+		else if(resposta == 8){
+			bloquearCartao();
+		}
+		else if(resposta == 9){
+			desbloquearCartao();
+		}
 		else {
 			System.out.println("Opção inválida");
 		}
 		
 	}
 	
-	public void bloquearCartao(int id_cartao) {
-		
+	public void bloquearCartao() {
+		bloqueado = true;
+		System.out.println("Cartão bloqueado!");
 	}
 	
-	public void desbloquearCartao(int id_cartao) {
-		
+	public void desbloquearCartao() {
+		bloqueado = false;
+		System.out.println("Cartão desbloqueado!");
 	}
 	
 	public static void excluirCartao(int id_cartao) {

@@ -1,17 +1,17 @@
 package br.com.fintech.fiap;
 
-import java.util.Date;
 
 public class Suporte {
 	
 	private int id_atendimento;
 	private int id_atendente;
-	private Date dt_atendimento;
+	private String dt_atendimento;
 	private int protocolo_atendimento;
 	private String ds_tempo_resposta;
 	private String ds_contato;
+	private Boolean status;
 	
-	public Suporte(int id_atendimento, int id_atendente, Date dt_atendimento, int protocolo_atendimento,
+	public Suporte(int id_atendimento, int id_atendente, String dt_atendimento, int protocolo_atendimento,
 			String ds_tempo_resposta, String ds_contato) {
 		super();
 		this.id_atendimento = id_atendimento;
@@ -22,11 +22,19 @@ public class Suporte {
 		this.ds_contato = ds_contato;
 	}
 
-	public Date getDt_atendimento() {
+	public Boolean getsStatus(){
+		return status;
+	}
+
+	public void setStatus(Boolean status){
+		this.status = status;
+	}
+
+	public String getDt_atendimento() {
 		return dt_atendimento;
 	}
 
-	public void setDt_atendimento(Date dt_atendimento) {
+	public void setDt_atendimento(String dt_atendimento) {
 		this.dt_atendimento = dt_atendimento;
 	}
 
@@ -67,7 +75,8 @@ public class Suporte {
 	}
 	
 	public void concluirAtendimento(int id_atendimento) {
-		
+		status = true;
+		System.out.println("Atendimento concluido com sucesso!");
 	}
 	
 	public void cancelarAtendimento(int id_atendimento) {

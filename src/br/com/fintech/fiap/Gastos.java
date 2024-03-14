@@ -1,6 +1,5 @@
 package br.com.fintech.fiap;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Gastos {
