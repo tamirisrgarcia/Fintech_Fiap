@@ -9,8 +9,12 @@ public class Funcionario extends Pessoa {
 	private String email_corp;
 	static Funcionario funcionario;
 
-	public Funcionario(int id_pessoa, String nome, String email_corp, double cpf, double rg , String dt_nascimento, String foto_perfil) {
+	public Funcionario(int id_pessoa, String nome, String email_corp, int nr_registro , String cargo ,double cpf, double rg , String dt_nascimento, String foto_perfil) {
 		super(id_pessoa, nome, cpf, rg, dt_nascimento, foto_perfil);
+		this.nr_registro = nr_registro;
+		this.cargo = cargo;
+		this.email_corp = email_corp;
+
 	}
 
 	public String getEmail_corp() {
@@ -41,8 +45,8 @@ public class Funcionario extends Pessoa {
 		System.out.println("Nome:"  + nome + "| Data de Nascimento" + dt_nascimento + "| Email: " + email_corp + "| Regsitro: " + nr_registro );
 	}
 	
-	public static void incluirFuncionario(int nr_registro, String cargo, String email_corp, double cpf, double rg ,String dt_nascimento ) {
-		funcionario = new Funcionario(nr_registro, cargo, email_corp, cpf, rg ,dt_nascimento, email_corp);
+	public static void incluirFuncionario(int id_pessoa, String nome, String email_corp, int nr_registro , String cargo ,double cpf, double rg , String dt_nascimento, String foto_perfil) {
+		funcionario = new Funcionario(id_pessoa, nome, email_corp, nr_registro, cargo, cpf, rg, dt_nascimento, foto_perfil );
 		System.out.println("Usuario incluido com sucesso!");
 	}
 	
