@@ -25,5 +25,18 @@ public class Conta_Corrente extends Conta {
 		this.chequeEspecial = chequeEspecial;
 	}
 
+    public String calcularTaxaJuros(double valor) {
+        double taxa =  valor * taxaJuros / 100;
+        return "A taxa de juros da sua conta é de: " + taxa;
+    }
+
+    public String calcularTaxaChequeEspecial(double valor) {
+        if (chequeEspecial) {
+        	double taxa = getSaldo() * (valor * 0.02);
+            return "A taxa do Cheque Especial da sua conta é de R$" + taxa;
+        } else {
+            return "A sua conta não possui taxa de Cheque Especial";
+        }
+    }
 
 }

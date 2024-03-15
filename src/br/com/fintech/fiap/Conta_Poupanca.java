@@ -15,5 +15,9 @@ public class Conta_Poupanca extends Conta {
 	public void setTaxaRendimento(double taxaRendimento) {
 		this.taxaRendimento = taxaRendimento;
 	}
-
+ 
+	public String calcularRendimento() {
+        double rendimento = getSaldo() * taxaRendimento / 100;
+        return "O rendimento da sua conta poupança é de R$" + rendimento;
+    }
 }

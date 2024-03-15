@@ -66,7 +66,7 @@ public class Usuario extends Pessoa {
 			System.out.println("Sua nova senha é: " + senha);
 		} else if(resposta == 3){
 			bloquearUsuario();
-		}else if(resposta == 4){
+		} else if(resposta == 4){
 			desbloquearUsuario();
 		}
 		else {
