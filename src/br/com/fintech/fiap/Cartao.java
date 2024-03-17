@@ -176,7 +176,7 @@ public class Cartao {
 		System.out.println("Cartão desbloqueado!");
 	}
 	
-	public static void excluirCartao(int id_cartao) {
+	public static void excluirCartao() {
 		cartao = null;
 		System.out.println("Cartão excluido com sucesso!");
 	}

@@ -56,7 +56,7 @@ public class Gastos {
 		return id_gasto;
 	}
 	
-	public double consultarGasto(int id_gasto) {
+	public double consultarGasto() {
 		return this.getValor();
 	}
 	
