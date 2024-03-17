@@ -56,7 +56,7 @@ public class Renda {
 		return id_renda;
 	}
 	
-	public void consultarRenda(int id_renda) {
+	public void consultarRenda() {
 		System.out.println("Renda: " + dsc_renda + " | com valor de: " + valor + " | Recebido na data: " + dt_recebimento);
 	}
 	

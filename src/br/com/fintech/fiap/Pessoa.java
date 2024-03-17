@@ -98,7 +98,7 @@ public class Pessoa {
 		}
 	}
 
-	public static void excluirPessoqa(){
+	public static void excluirPessoa(){
 		pessoa = null;
 		System.out.println("Pessoa excluida com sucesso!");
 	}
